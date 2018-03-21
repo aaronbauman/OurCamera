@@ -1,19 +1,3 @@
-r"""Processing Image and Annotation Dataset
-
-This executable is used to convert the image and label dataset to test and train TF Records:
-
-A folder should be specified which contains folders labeled images/ and labels/
-Each jpg image file should contain a corresponding label file with the same name but with .xml extension
-A ratio of test to training should be specified i.e. .70
-
-Example usage:
-    ./generate_tfrecord \
-        --folder=path/to/data_dir \
-        --train_ratio=.70
-
-"""
-
-
 from __future__ import absolute_import
 from PIL import Image
 
@@ -25,7 +9,8 @@ import io
 import tensorflow as tf
 import sys
 import xml.etree.ElementTree as eT
-sys.path.append('./models-master/research/')
+sys.path.append('./models/research/')
+
 from object_detection.utils import dataset_util
 
 
